@@ -60,7 +60,7 @@
   }
 
   // create the first account (with blank password) if necessary
-  if (!web3.eth.coinbase) {
+  if (web3.personal.listAccounts.length === 0) {
     log('Creating etherbase account');
     web3.personal.newAccount('');
   }
